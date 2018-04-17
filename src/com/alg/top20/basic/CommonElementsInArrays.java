@@ -9,6 +9,8 @@ public class CommonElementsInArrays {
 		int n = Integer.parseInt(args[0]);
 		int m = Integer.parseInt(args[1]);
 		
+		
+		
 		int[] in1 = new int[n];
 		int[] in2 = new int[m];
 		
