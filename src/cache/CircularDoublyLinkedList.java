@@ -3,11 +3,14 @@ package cache;
 public class CircularDoublyLinkedList {
 	
 	private int size;
+	private int SIZE;
+	private int SIZe;
 	private DListNode head;
 	
 	public CircularDoublyLinkedList(){
 		head = new DListNode();//head is a dummy node created to use as a pointer
 		size =0;
+		SIZE=0;
 	}
 	
 	public DListNode addLast(String key,Integer value){

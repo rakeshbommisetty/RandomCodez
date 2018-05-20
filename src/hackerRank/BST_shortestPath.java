@@ -31,18 +31,17 @@ public class BST_shortestPath {
             
             
             LinkedList<Integer>  ll = list[startId];
-            int[] result = new int[size];
+            int[] distances = new int[size];
+            Arrays.fill(distances,-1);
+            
             if(ll.size() == 0){
-                
-                for(int i=0;i<size;++i){
-                    result[i] = -1;
-                }
-                return result;
+                return distances;
             }
-            HashMap<Integer, Integer> visited = new HashMap<Integer, Integer>();
+            
+            
             LinkedList<Integer> queue = new LinkedList<Integer>();
             
-            visited.put(startId,0);
+            distances[startId]=0;
             queue.add(startId);
             
             int count = 0;
@@ -54,27 +53,16 @@ public class BST_shortestPath {
                 while (i.hasNext())
             {
                 int n = i.next();
-                if (visited.get(n)==null)
+                if (distances[n]==-1)
                 {
-                    visited.put(n,count);
+                	distances[n] = distances[s]+6;
                     queue.add(n);
+                    
                 }
             }
             }
             
-            
-            
-            for(Map.Entry<Integer,Integer> entry: visited.entrySet()){
-                int index = entry.getKey();
-                result[index] = entry.getValue()*6;
-                
-            }
-            
-            for(int x=0;x<result.length;++x){
-                if(result[x]==0)
-                    result[x]=-1;
-            }
-            return result;
+            return distances;
         }
     }
     
